@@ -13,7 +13,7 @@ $this->title = 'Euro 2020 : ทายผล';
     </div>
 
     <?php
-    $isDisable = date('Y-m-d H:i:s') > '2021-06-12 02:00:00';
+    $isDisable = date('Y-m-d H:i:s') > '2021-06-16 04:00:00';
     ?>
 
     <?php if ($isDisable): ?>

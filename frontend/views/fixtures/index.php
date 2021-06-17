@@ -11,8 +11,8 @@ $this->title = 'Euro 2020 : Fixtures';
         <h1>
             ทายทีมแชมป์<br>
         </h1>
-        <?php if (date('Y-m-d H:i:s') < '2021b06-12 02:00:00'): ?>
-            <div class="alert alert-warning">ทายได้ถึงเริ่มการแข่งขันคู่แรก</div>
+        <?php if (date('Y-m-d H:i:s') < '2021-06-16 04:00:00'): ?>
+            <div class="alert alert-warning">ทายได้ถึงการแข่งขันนัดแรกของทุกทีมจบ</div>
         <?php endif; ?>
     </div>
 
@@ -21,7 +21,7 @@ $this->title = 'Euro 2020 : Fixtures';
             <div class="col-md-3 text-center">
                 <h3><?= isset($userTournamentGuessChamp) ? "<img src='{$userTournamentGuessChamp->country->flag}' class='img-fluid' height='20'>" . $userTournamentGuessChamp->country->name : '-' ?></h3>
 
-                <?php if (date('Y-m-d H:i:s') < '2021-06-12 02:00:00'): ?>
+                <?php if (date('Y-m-d H:i:s') < '2021-06-16 04:00:00'): ?>
                     <a href="/fixtures/guess-champ" class="btn btn-warning btn-lg">ทายทีมแชมป์</a>
                 <?php endif; ?>
             </div>

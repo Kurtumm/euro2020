@@ -51,6 +51,22 @@ $this->title = 'My Yii Application';
                     <?php endforeach; ?>
                 </table>
 
+                <h3 class="text-center mb-2 mb-md-4">เดาแชมป์</h3>
+
+                <table class="table table-bordered table-striped table-condensed" style="font-size: 0.8em;">
+                    <tr class="text-center">
+                        <th>#</th>
+                        <th>User</th>
+                        <th>Country</th>
+                    </tr>
+                    <?php foreach ($guessChamps as $k => $guessChamp): ?>
+                        <tr class="text-center">
+                            <td><?= $k + 1 ?></td>
+                            <td><?= $guessChamp->user->username ?></td>
+                            <td><img src="<?=$guessChamp->country->flag?>" alt="" height="20">&nbsp;<?=$guessChamp->country->name?></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </table>
             </div>
             <div class="col-md-8">
                 <h3 class="text-center mb-2 mb-md-4">ตารางคะแนนรอบแบ่งกลุ่ม</h3>

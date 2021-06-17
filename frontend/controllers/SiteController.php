@@ -3,6 +3,7 @@ namespace frontend\controllers;
 
 use frontend\models\ft\Tournament;
 use frontend\models\ft\TournamentMatch;
+use frontend\models\ft\UserTournamentGuessChamp;
 use frontend\models\ft\UserTournamentMatch;
 use frontend\models\ResendVerificationEmailForm;
 use frontend\models\VerifyEmailForm;
@@ -213,7 +214,7 @@ FROM
 GROUP BY
 	A.id
 	
-	ORDER BY sumTotalPoint DESC";
+	ORDER BY sumTotalPoint DESC,D.countCorrectMatchResult DESC, F.twoSideScore DESC, E.oneSideScore DESC";
 
         $userTable = Yii::$app->db->createCommand($sql)->queryAll();
 
@@ -225,13 +226,15 @@ GROUP BY
                     $q->onCondition(['A.userId' => Yii::$app->user->id]);
                 }
             ])
-            ->where(['DATE(matchDateTime)' => '2021-06-12'])
+            ->where(['DATE(matchDateTime)' => date('Y-m-d')])
             ->orderBy([
                 'tournament_match.matchDateTime' => SORT_ASC,
             ])
             ->all();
 
-        return $this->render('index', compact('tournament', 'userTable', 'fixtures'));
+        $guessChamps = UserTournamentGuessChamp::find()->joinWith(['user', 'country'])->all();
+
+        return $this->render('index', compact('tournament', 'userTable', 'fixtures', 'guessChamps'));
     }
 
     /**

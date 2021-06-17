@@ -49,7 +49,7 @@ $this->title = 'Euro 2020 : ทายผล';
                         <h3>ทายผลการแข่งขัน</h3>
                     </div>
                     <div class="card-body">
-                        <?=$form->field($tournamentMatch, 'matchResult')->dropDownList($tournamentMatch->guessResultArray, ['prompt' => 'เลือกผลการแข่งขัน', 'disabled' => $isDisable])->label(false)?>
+                        <?=$form->field($tournamentMatch, 'matchResult')->dropDownList($tournamentMatch->guessResultArray, ['prompt' => 'เลือกผลการแข่งขัน'])->label(false)?>
                     </div>
                 </div>
             </div>
@@ -64,11 +64,11 @@ $this->title = 'Euro 2020 : ทายผล';
                                 <?=$tournamentMatch->homeCountry->name?> (<?=$tournamentMatch->homeCountry->cioc?>) <img src="<?=$tournamentMatch->homeCountry->flag?>" alt="" height="20">
                             </div>
                             <div class="col-md-2">
-                                <?=$form->field($tournamentMatch, 'homeScore', ['errorOptions' => ['tag' => null]])->textInput(['disabled' => $isDisable])->label(false)?>
+                                <?=$form->field($tournamentMatch, 'homeScore', ['errorOptions' => ['tag' => null]])->textInput()->label(false)?>
                             </div>
                             <div class="col-md-1 text-center">:</div>
                             <div class="col-md-2">
-                                <?=$form->field($tournamentMatch, 'awayScore', ['errorOptions' => ['tag' => null]])->textInput(['disabled' => $isDisable])->label(false)?>
+                                <?=$form->field($tournamentMatch, 'awayScore', ['errorOptions' => ['tag' => null]])->textInput()->label(false)?>
                             </div>
                             <div class="col-md-3">
                                 <img src="<?=$tournamentMatch->awayCountry->flag?>" alt="" height="20"> <?=$tournamentMatch->awayCountry->name?> (<?=$tournamentMatch->awayCountry->cioc?>)

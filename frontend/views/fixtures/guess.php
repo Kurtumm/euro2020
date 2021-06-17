@@ -27,13 +27,13 @@ $this->title = 'Euro 2020 : ทายผล';
 
     <div class="row my-2 border p-2">
         <div class="col-md-2"><?=$tournamentMatch->matchDateTime?></div>
-        <div class="col-md-4 text-end">
+        <div class="col-md-4 text-md-end text-center">
             <?=$tournamentMatch->homeCountry->name?> (<?=$tournamentMatch->homeCountry->cioc?>) <img src="<?=$tournamentMatch->homeCountry->flag?>" alt="" height="20">
         </div>
-        <div class="col-md-1 text-center">
+        <div class="col-md-1 text-center my-md-0 my-2">
             <?=isset($tournamentMatch->homeScore) ? $tournamentMatch->homeScore : '-'?> : <?=isset($tournamentMatch->awayScore) ? $tournamentMatch->awayScore : '-'?>
         </div>
-        <div class="col-md-4 text-start">
+        <div class="col-md-4 text-md-start text-center">
             <img src="<?=$tournamentMatch->awayCountry->flag?>" alt="" height="20"> <?=$tournamentMatch->awayCountry->name?> (<?=$tournamentMatch->awayCountry->cioc?>)
         </div>
     </div>
@@ -60,17 +60,17 @@ $this->title = 'Euro 2020 : ทายผล';
                     </div>
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-md-3 text-end">
+                            <div class="col-md-3 col-3 text-md-end text-center">
                                 <?=$tournamentMatch->homeCountry->name?> (<?=$tournamentMatch->homeCountry->cioc?>) <img src="<?=$tournamentMatch->homeCountry->flag?>" alt="" height="20">
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-2 col-2">
                                 <?=$form->field($userTournamentMatch, 'homeScore', ['errorOptions' => ['tag' => null]])->textInput(['disabled' => $isDisable])->label(false)?>
                             </div>
-                            <div class="col-md-1 text-center">:</div>
-                            <div class="col-md-2">
+                            <div class="col-md-1 col-2 text-center">:</div>
+                            <div class="col-md-2 col-2">
                                 <?=$form->field($userTournamentMatch, 'awayScore', ['errorOptions' => ['tag' => null]])->textInput(['disabled' => $isDisable])->label(false)?>
                             </div>
-                            <div class="col-md-3">
+                            <div class="col-md-3 col-3 text-md-start text-center">
                                 <img src="<?=$tournamentMatch->awayCountry->flag?>" alt="" height="20"> <?=$tournamentMatch->awayCountry->name?> (<?=$tournamentMatch->awayCountry->cioc?>)
                             </div>
                         </div>

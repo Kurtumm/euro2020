@@ -179,7 +179,7 @@ class FixturesController extends Controller
 
                 $this->calculateUserTournamentMatchPoint($tournamentMatch);
 
-                $this->updateTournamentGroupTable();
+                $this->actionCalculateTournamentGroupTable();
 
 //                return $this->redirect('/fixtures');
             } else {
@@ -225,7 +225,7 @@ class FixturesController extends Controller
 
     public function actionGuessChamp()
     {
-        if (date('Y-m-d H:i:s') > '2021-06-12 02:00:00') {
+        if (date('Y-m-d H:i:s') > '2021-06-16 04:00:00') {
             return $this->goBack();
         }
 
@@ -282,5 +282,11 @@ class FixturesController extends Controller
         }
 
         var_dump($data);
+    }
+
+    public function actionReCalculate()
+    {
+//        $this->calculateUserTournamentMatchPoint();
+        $this->actionCalculateTournamentGroupTable();
     }
 }
