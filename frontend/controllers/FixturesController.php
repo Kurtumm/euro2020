@@ -155,6 +155,10 @@ class FixturesController extends Controller
             ->where(['tournament_match.tournamentMatchId' => $id])
             ->one();
 
+        if($tournamentMatch->matchDateTime > date('Y-m-d H:i:s')) {
+            return $this->goHome();
+        }
+
         return $this->render('user-guess', compact('tournamentMatch'));
     }
 

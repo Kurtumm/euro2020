@@ -56,9 +56,11 @@ $currentDate = '';
                 <button class="btn btn-secondary btn-sm" disabled>ทายผล</button>
             <?php endif; ?>
 
-            <a class="btn btn-info btn-sm"
-               href="/fixtures/user-guess?id=<?= $fixture->tournamentMatchId ?>"><i
-                    class="fas fa-search"></i></a>
+            <?php if ($isDisable): ?>
+                <a class="btn btn-info btn-sm"
+                   href="/fixtures/user-guess?id=<?= $fixture->tournamentMatchId ?>"><i
+                        class="fas fa-search"></i></a>
+            <?php endif; ?>
 
             <?php if (Yii::$app->user->id == 1) : ?>
                 <a class="btn btn-info btn-sm"
